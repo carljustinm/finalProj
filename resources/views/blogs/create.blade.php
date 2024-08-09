@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Create Blog</h1>
-    <form action="{{ route('blogs.store') }}" method="POST">
+    <form method="POST" action="{{ route('blogs.store') }}">
         @csrf
         <div class="form-group">
             <label for="title">Title</label>
@@ -13,7 +13,7 @@
             <label for="content">Content</label>
             <textarea id="content" name="content" class="form-control" rows="5" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Save</button>
+        <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </div>
 @endsection

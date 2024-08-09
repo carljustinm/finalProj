@@ -7,17 +7,10 @@
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
-    <ul class="list-group mt-3">
+    <ul>
         @foreach($blogs as $blog)
-            <li class="list-group-item">
-                <h5>{{ $blog->title }}</h5>
-                <p>{{ $blog->content }}</p>
-                <a href="{{ route('blogs.edit', $blog) }}" class="btn btn-warning">Edit</a>
-                <form action="{{ route('blogs.destroy', $blog) }}" method="POST" style="display:inline;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
+            <li>
+                <a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a>
             </li>
         @endforeach
     </ul>
