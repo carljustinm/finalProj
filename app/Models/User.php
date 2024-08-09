@@ -45,3 +45,11 @@ class User extends Authenticatable
         ];
     }
 }
+
+/**
+ * To define relationships
+ * 
+ */
+public function posts() {
+    return $this->hasMany(Post::class);
+}
